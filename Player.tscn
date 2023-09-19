@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://vhb702qgmm2o"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_cb7t0"]
+[ext_resource type="Texture2D" uid="uid://wxwffsn0el7b" path="res://sprites/Character/Idle/Idle-Sheet.png" id="1_xubpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxxgy"]
+size = Vector2(20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr8x6"]
+atlas = ExtResource("1_xubpm")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dn1b"]
+atlas = ExtResource("1_xubpm")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wbo8"]
+atlas = ExtResource("1_xubpm")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdpu5"]
+atlas = ExtResource("1_xubpm")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ukr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr8x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dn1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wbo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdpu5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cb7t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wxxgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ukr5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.188405
