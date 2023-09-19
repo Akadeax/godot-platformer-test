@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://vhb702qgmm2o"]
 
-[ext_resource type="Script" path="res://Player.cs" id="1_cb7t0"]
+[ext_resource type="Script" path="res://Player.gd" id="1_vr53m"]
 [ext_resource type="Texture2D" uid="uid://wxwffsn0el7b" path="res://sprites/Character/Idle/Idle-Sheet.png" id="1_xubpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxxgy"]
@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_cb7t0")
+script = ExtResource("1_vr53m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wxxgy")
@@ -52,4 +52,4 @@ shape = SubResource("RectangleShape2D_wxxgy")
 sprite_frames = SubResource("SpriteFrames_6ukr5")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.188405
+frame_progress = 0.831917
